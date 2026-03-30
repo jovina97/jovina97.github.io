@@ -76,6 +76,10 @@
     .capsule-num { font-family: var(--sans); font-size: 0.62rem; color: var(--accent-soft); flex-shrink: 0; padding-top: 0.2em; }
     .capsule-text { font-family: var(--sans); font-size: 0.9rem; font-weight: 300; color: var(--ink-mid); line-height: 1.65; }
 
+    /* ── Hero photo ── */
+    .hero-photo { display: flex; align-items: center; justify-content: center; }
+    .hero-photo img { width: 100%; max-width: 420px; max-height: 520px; object-fit: cover; object-position: center top; border: 1px solid var(--rule); }
+
     /* ── PhD Research ── */
     #phd-research { border-bottom: 1px solid var(--rule); }
     .research-intro { max-width: 600px; font-size: 1.1rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 3.5rem; }
@@ -157,7 +161,7 @@
     /* ── Mobile ── */
     @media (max-width: 760px) {
       .hero-grid, .poetry-top, .cv-grid, .poems-grid, .poems-text-row { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-card { display: none; }
+      .hero-photo { display: none; }
       .project-item, .pub-item { grid-template-columns: 1fr; gap: 0.3rem; }
       .project-n, .pub-year { display: none; }
       .nav-links { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--rule); flex-direction: column; padding: 1.5rem clamp(1.5rem, 5vw, 3.5rem); gap: 1.2rem; }
@@ -212,20 +216,8 @@
             </div>
           </div>
 
-          <div class="hero-card fade" style="transition-delay:0.15s;">
-            <p class="hero-card-label">Current research</p>
-            <div class="capsule">
-              <span class="capsule-num">01</span>
-              <span class="capsule-text">Viscous anchoring in non-Newtonian drops — spatiotemporal viscosity gradients arrest shape recovery (OpenFOAM / Carreau-Yasuda)</span>
-            </div>
-            <div class="capsule">
-              <span class="capsule-num">02</span>
-              <span class="capsule-text">Microfluidic Stokes trap experiments — history-dependent, anisotropic arrest under extensional flow</span>
-            </div>
-            <div class="capsule">
-              <span class="capsule-num">03</span>
-              <span class="capsule-text">Flow-induced partial coalescence of particle-filled emulsion drops — published I&ECR 2025</span>
-            </div>
+          <div class="hero-photo fade" style="transition-delay:0.15s;">
+            <img src="jovina.jpeg" alt="Jovina Vaswani" />
           </div>
 
         </div>
