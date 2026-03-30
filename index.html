@@ -50,6 +50,7 @@
     /* ── About ── */
     #about { border-bottom: 1px solid var(--rule); }
     .hero-grid { display: block; min-height: calc(100vh - var(--nav-h)); padding-top: 2rem; }
+    .hero-body { overflow: hidden; }
     .hero-greeting { font-family: var(--sans); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; }
     .hero-name { font-family: var(--script); font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 400; line-height: 1.2; margin-bottom: 0.4em; white-space: nowrap; color: var(--ink-mid); }
     .hero-subtitle { font-family: var(--sans); font-size: 0.8rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2rem; }
@@ -77,8 +78,8 @@
     .capsule-text { font-family: var(--sans); font-size: 0.9rem; font-weight: 300; color: var(--ink-mid); line-height: 1.65; }
 
     /* ── Hero photo ── */
-    .hero-photo { float: right; margin: 0 0 2rem 3rem; }
-    .hero-photo img { width: 340px; height: 400px; object-fit: cover; object-position: center top; border: 1px solid var(--rule); display: block; }
+    .hero-photo { float: right; margin: 0.5rem 0 1.5rem 2.5rem; }
+    .hero-photo img { width: 280px; height: 320px; object-fit: cover; object-position: 30% top; border: 1px solid var(--rule); display: block; }
     .hero-left { overflow: hidden; }
 
     /* ── PhD Research ── */
@@ -196,14 +197,14 @@
       <div class="section-inner">
         <div class="hero-grid">
 
-          <div class="hero-photo fade">
-            <img src="jovina.jpeg" alt="Jovina Vaswani" />
-          </div>
+          <h1 class="hero-name fade">Jovina Vaswani</h1>
+          <p class="hero-subtitle fade">ChemE Ph.D. Student &amp; Poet</p>
+          <div class="rule-line fade"></div>
 
-          <div class="hero-left fade" style="transition-delay:0.1s;">
-            <h1 class="hero-name">Jovina Vaswani</h1>
-            <p class="hero-subtitle">ChemE Ph.D. Student &amp; Poet</p>
-            <div class="rule-line"></div>
+          <div class="hero-body">
+            <div class="hero-photo fade">
+              <img src="jovina.jpeg" alt="Jovina Vaswani" />
+            </div>
 
             <p class="hero-bio">I am a final-year PhD student in the <strong>Department of Chemical and Petroleum Engineering</strong> at the University of Pittsburgh, where I work with <strong>Dr. Sachin Velankar</strong>. My research focuses on how particle-laden drops deform, arrest, and coalesce under flow, combining microfluidic experiments with OpenFOAM simulations and constitutive modeling.</p>
 
