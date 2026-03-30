@@ -19,8 +19,8 @@
       --script: 'Dancing Script', cursive;
       --nav-h: 60px; --max: 1080px;
     }
-    html { scroll-behavior: smooth; font-size: 17px; }
-    body { background: var(--paper); color: var(--ink); font-family: var(--serif); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; font-size: 18px; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--serif); line-height: 1.8; -webkit-font-smoothing: antialiased; }
 
     /* ── Nav ── */
     nav {
@@ -39,7 +39,7 @@
 
     /* ── Layout ── */
     .section-inner { max-width: var(--max); margin: 0 auto; padding: clamp(4.5rem, 9vw, 7rem) clamp(1.5rem, 5vw, 3.5rem); }
-    .eyebrow { font-family: var(--sans); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2.8rem; }
+    .eyebrow { font-family: var(--sans); font-size: 0.82rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2.8rem; }
     .rule-line { width: 2.5rem; height: 1px; background: var(--accent-soft); margin: 1.8rem 0; }
     .btn { font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.7rem 1.5rem; text-decoration: none; transition: all 0.2s; display: inline-block; border-radius: 1px; }
     .btn-primary { background: var(--ink); color: var(--paper); }
@@ -51,9 +51,9 @@
     #about { border-bottom: 1px solid var(--rule); }
     .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; min-height: calc(100vh - var(--nav-h)); }
     .hero-greeting { font-family: var(--sans); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; }
-    .hero-name { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 4.8rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.3em; letter-spacing: 0.01em; font-style: italic; }
-    .hero-subtitle { font-family: var(--sans); font-size: 0.78rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2rem; }
-    .hero-bio { font-size: 1.05rem; color: var(--ink-mid); line-height: 1.85; max-width: 440px; margin-bottom: 0.8rem; }
+    .hero-name { font-family: var(--script); font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 400; line-height: 1.2; margin-bottom: 0.4em; white-space: nowrap; }
+    .hero-subtitle { font-family: var(--sans); font-size: 0.8rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2rem; }
+    .hero-bio { font-size: 1.1rem; color: var(--ink-mid); line-height: 1.9; max-width: 460px; margin-bottom: 0.8rem; }
     .hero-bio strong { color: var(--ink); font-weight: 500; }
     .hero-bio a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: border-color 0.2s; }
     .hero-bio a:hover { border-color: var(--accent); }
@@ -74,7 +74,7 @@
     .capsule { display: flex; gap: 1rem; margin-bottom: 1.4rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--rule); }
     .capsule:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .capsule-num { font-family: var(--sans); font-size: 0.62rem; color: var(--accent-soft); flex-shrink: 0; padding-top: 0.2em; }
-    .capsule-text { font-family: var(--sans); font-size: 0.82rem; font-weight: 300; color: var(--ink-mid); line-height: 1.6; }
+    .capsule-text { font-family: var(--sans); font-size: 0.9rem; font-weight: 300; color: var(--ink-mid); line-height: 1.65; }
 
     /* ── PhD Research ── */
     #phd-research { border-bottom: 1px solid var(--rule); }
@@ -83,7 +83,7 @@
     .project-item { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 2.2rem 0; border-bottom: 1px solid var(--rule); }
     .project-n { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.08em; color: var(--accent-soft); padding-top: 0.35em; }
     .project-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; margin-bottom: 0.6rem; line-height: 1.35; }
-    .project-desc { font-family: var(--sans); font-size: 0.84rem; font-weight: 300; color: var(--ink-mid); line-height: 1.72; margin-bottom: 1rem; }
+    .project-desc { font-family: var(--sans); font-size: 0.92rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; margin-bottom: 1rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .tag { font-family: var(--sans); font-size: 0.6rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.22rem 0.6rem; border: 1px solid var(--rule); color: var(--ink-light); }
 
@@ -98,9 +98,9 @@
     .pub-title { font-family: var(--serif); font-size: 1rem; font-weight: 500; line-height: 1.4; margin-bottom: 0.35rem; }
     .pub-title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); transition: all 0.2s; }
     .pub-title a:hover { color: var(--accent); border-color: var(--accent); }
-    .pub-authors { font-family: var(--sans); font-size: 0.8rem; font-weight: 300; color: var(--ink-mid); margin-bottom: 0.2rem; }
+    .pub-authors { font-family: var(--sans); font-size: 0.88rem; font-weight: 300; color: var(--ink-mid); margin-bottom: 0.2rem; }
     .pub-authors strong { font-weight: 500; color: var(--ink); }
-    .pub-journal { font-family: var(--sans); font-size: 0.76rem; color: var(--ink-light); font-style: italic; }
+    .pub-journal { font-family: var(--sans); font-size: 0.84rem; color: var(--ink-light); font-style: italic; }
 
     /* ── CV ── */
     #cv { border-bottom: 1px solid var(--rule); }
@@ -109,7 +109,7 @@
     .cv-block h3 { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule); margin-bottom: 1.4rem; }
     .cv-item { margin-bottom: 1.3rem; }
     .cv-item-title { font-family: var(--serif); font-size: 1rem; font-weight: 500; margin-bottom: 0.15rem; }
-    .cv-item-sub { font-family: var(--sans); font-size: 0.78rem; font-weight: 300; color: var(--ink-mid); }
+    .cv-item-sub { font-family: var(--sans); font-size: 0.88rem; font-weight: 300; color: var(--ink-mid); }
     .cv-item-date { font-family: var(--sans); font-size: 0.65rem; color: var(--ink-light); letter-spacing: 0.04em; }
     .chip-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
     .chip { font-family: var(--sans); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.06em; padding: 0.28rem 0.65rem; border: 1px solid var(--rule); color: var(--ink-mid); }
@@ -136,7 +136,7 @@
     .poem-sketch { border: 1px solid var(--rule); background: var(--paper); }
     .poem-sketch img { width: 100%; display: block; }
     .poem-name { font-family: var(--script); font-size: 1.25rem; color: var(--ink); margin-bottom: 1rem; }
-    .poem-body { font-family: var(--serif); font-size: 0.98rem; line-height: 2; color: var(--ink-mid); white-space: pre-line; }
+    .poem-body { font-family: var(--serif); font-size: 1.05rem; line-height: 2.1; color: var(--ink-mid); white-space: pre-line; }
     .poem-source { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.1em; color: var(--ink-light); margin-top: 0.8rem; }
 
     /* Text-only poems */
@@ -191,7 +191,7 @@
 
           <div class="fade">
             <h1 class="hero-name">Jovina Vaswani</h1>
-            <p class="hero-subtitle">Poet &amp; ChemE PhD</p>
+            <p class="hero-subtitle">ChemE Ph.D. Student &amp; Poet</p>
             <div class="rule-line"></div>
 
             <p class="hero-bio">I am a final-year PhD student in the <strong>Department of Chemical and Petroleum Engineering</strong> at the University of Pittsburgh, where I work with <strong>Dr. Sachin Velankar</strong>. My research focuses on how particle-laden drops deform, arrest, and coalesce under flow, combining microfluidic experiments with OpenFOAM simulations and constitutive modeling.</p>
@@ -236,7 +236,7 @@
     <section id="phd-research">
       <div class="section-inner">
         <p class="eyebrow">PhD Research</p>
-        <p class="research-intro fade">A central question across my PhD: how does <em>local rheology</em> govern drop-scale dynamics? Dense particle loading arrests drops at non-spherical shapes — my research asks why, and which regions arrest first.</p>
+        <p class="research-intro fade">My dissertation focuses on the dynamics of particle-filled drops under flow and upon cessation of flow, particularly how dense particle loading affects drop relaxation and coalescence. I combine rheology, microfluidics, and simulations.</p>
 
         <div class="project-list">
 
@@ -558,7 +558,7 @@ while healing from their loss.</p>
   </main>
 
   <footer>
-    <p class="footer-copy">© 2026 Jovina Vaswani · Pittsburgh, PA</p>
+    <p class="footer-copy">© 2026 Jovina Vaswani · Pittsburgh, PA · Made with Claude's help</p>
     <div class="footer-links">
       <a href="mailto:jov44@pitt.edu">Email</a>
       <a href="https://jovinavaswani.com" target="_blank" rel="noopener">Poetry Site</a>
