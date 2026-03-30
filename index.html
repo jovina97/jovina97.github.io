@@ -49,7 +49,7 @@
 
     /* ── About ── */
     #about { border-bottom: 1px solid var(--rule); }
-    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; min-height: calc(100vh - var(--nav-h)); }
+    .hero-grid { display: block; min-height: calc(100vh - var(--nav-h)); padding-top: 2rem; }
     .hero-greeting { font-family: var(--sans); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; }
     .hero-name { font-family: var(--script); font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 400; line-height: 1.2; margin-bottom: 0.4em; white-space: nowrap; color: var(--ink-mid); }
     .hero-subtitle { font-family: var(--sans); font-size: 0.8rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2rem; }
@@ -77,8 +77,9 @@
     .capsule-text { font-family: var(--sans); font-size: 0.9rem; font-weight: 300; color: var(--ink-mid); line-height: 1.65; }
 
     /* ── Hero photo ── */
-    .hero-photo { display: flex; align-items: center; justify-content: center; }
-    .hero-photo img { width: 100%; max-width: 420px; max-height: 520px; object-fit: cover; object-position: center top; border: 1px solid var(--rule); }
+    .hero-photo { float: right; margin: 0 0 2rem 3rem; }
+    .hero-photo img { width: 340px; height: 400px; object-fit: cover; object-position: center top; border: 1px solid var(--rule); display: block; }
+    .hero-left { overflow: hidden; }
 
     /* ── PhD Research ── */
     #phd-research { border-bottom: 1px solid var(--rule); }
@@ -161,7 +162,9 @@
     /* ── Mobile ── */
     @media (max-width: 760px) {
       .hero-grid, .poetry-top, .cv-grid, .poems-grid, .poems-text-row { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-photo { display: none; }
+      .hero-grid { padding-top: 1rem; }
+      .hero-photo { float: none; margin: 0 0 2rem 0; }
+      .hero-photo img { width: 100%; height: 280px; }
       .project-item, .pub-item { grid-template-columns: 1fr; gap: 0.3rem; }
       .project-n, .pub-year { display: none; }
       .nav-links { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--rule); flex-direction: column; padding: 1.5rem clamp(1.5rem, 5vw, 3.5rem); gap: 1.2rem; }
@@ -193,7 +196,11 @@
       <div class="section-inner">
         <div class="hero-grid">
 
-          <div class="fade">
+          <div class="hero-photo fade">
+            <img src="jovina.jpeg" alt="Jovina Vaswani" />
+          </div>
+
+          <div class="hero-left fade" style="transition-delay:0.1s;">
             <h1 class="hero-name">Jovina Vaswani</h1>
             <p class="hero-subtitle">ChemE Ph.D. Student &amp; Poet</p>
             <div class="rule-line"></div>
@@ -214,10 +221,6 @@
               <a href="mailto:jov44@pitt.edu" class="btn btn-secondary">jov44@pitt.edu</a>
               <a href="#poetry" class="btn btn-secondary">Poetry →</a>
             </div>
-          </div>
-
-          <div class="hero-photo fade" style="transition-delay:0.15s;">
-            <img src="jovina.jpeg" alt="Jovina Vaswani" />
           </div>
 
         </div>
