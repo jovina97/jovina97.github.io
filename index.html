@@ -1,334 +1,601 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Jovina Vaswani</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jovina Vaswani — Poet & PhD Researcher</title>
+  <meta name="description" content="Jovina Vaswani — poet and final-year PhD candidate in Chemical Engineering at the University of Pittsburgh. Author of It's Dawn. Currently seeking postdoctoral positions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1c1c1a; --ink-mid: #4e4e49; --ink-light: #7a7a73;
+      --paper: #fdfcf9; --paper-warm: #f6f3ec; --paper-deep: #ede9df;
+      --accent: #8b6914; --accent-soft: #c9a44a; --rule: #e0dbd0;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', system-ui, sans-serif;
+      --script: 'Dancing Script', cursive;
+      --nav-h: 60px; --max: 1080px;
+    }
+    html { scroll-behavior: smooth; font-size: 17px; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--serif); line-height: 1.75; -webkit-font-smoothing: antialiased; }
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h); background: rgba(253,252,249,0.94);
+      backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 3.5rem);
+    }
+    .nav-brand { font-family: var(--script); font-size: 1.4rem; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.7rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 1px; background: var(--ink-mid); }
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+    /* ── Layout ── */
+    .section-inner { max-width: var(--max); margin: 0 auto; padding: clamp(4.5rem, 9vw, 7rem) clamp(1.5rem, 5vw, 3.5rem); }
+    .eyebrow { font-family: var(--sans); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2.8rem; }
+    .rule-line { width: 2.5rem; height: 1px; background: var(--accent-soft); margin: 1.8rem 0; }
+    .btn { font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.7rem 1.5rem; text-decoration: none; transition: all 0.2s; display: inline-block; border-radius: 1px; }
+    .btn-primary { background: var(--ink); color: var(--paper); }
+    .btn-primary:hover { background: var(--ink-mid); }
+    .btn-secondary { border: 1px solid var(--rule); color: var(--ink-mid); }
+    .btn-secondary:hover { border-color: var(--ink-mid); color: var(--ink); }
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+    /* ── About ── */
+    #about { border-bottom: 1px solid var(--rule); }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; min-height: calc(100vh - var(--nav-h)); }
+    .hero-greeting { font-family: var(--sans); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; }
+    .hero-name { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 4.8rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.3em; letter-spacing: 0.01em; font-style: italic; }
+    .hero-subtitle { font-family: var(--sans); font-size: 0.78rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2rem; }
+    .hero-bio { font-size: 1.05rem; color: var(--ink-mid); line-height: 1.85; max-width: 440px; margin-bottom: 0.8rem; }
+    .hero-bio strong { color: var(--ink); font-weight: 500; }
+    .hero-bio a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: border-color 0.2s; }
+    .hero-bio a:hover { border-color: var(--accent); }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    .postdoc-banner {
+      display: inline-flex; align-items: center; gap: 0.65rem;
+      font-family: var(--sans); font-size: 0.71rem; font-weight: 400; letter-spacing: 0.07em;
+      background: var(--paper-warm); border: 1px solid var(--accent-soft);
+      color: var(--accent); padding: 0.5rem 1rem; margin-top: 1.6rem; margin-bottom: 0.3rem;
+    }
+    .postdoc-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-soft); animation: pulse 2s infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/fullsizeoutput_ec4.jpeg);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Jovina Vaswani</a></h1>
-				
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-					</ul>
-				</div>
-			</nav>
+    .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
 
-			<div class="colorlib-footer">
-				
-				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-				</ul>
-			</div>
+    .hero-card { background: var(--paper-warm); border: 1px solid var(--rule); padding: 2.5rem; }
+    .hero-card-label { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 1.8rem; }
+    .capsule { display: flex; gap: 1rem; margin-bottom: 1.4rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--rule); }
+    .capsule:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .capsule-num { font-family: var(--sans); font-size: 0.62rem; color: var(--accent-soft); flex-shrink: 0; padding-top: 0.2em; }
+    .capsule-text { font-family: var(--sans); font-size: 0.82rem; font-weight: 300; color: var(--ink-mid); line-height: 1.6; }
 
-		</aside>
+    /* ── PhD Research ── */
+    #phd-research { border-bottom: 1px solid var(--rule); }
+    .research-intro { max-width: 600px; font-size: 1.1rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 3.5rem; }
+    .project-list { border-top: 1px solid var(--rule); }
+    .project-item { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 2.2rem 0; border-bottom: 1px solid var(--rule); }
+    .project-n { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.08em; color: var(--accent-soft); padding-top: 0.35em; }
+    .project-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; margin-bottom: 0.6rem; line-height: 1.35; }
+    .project-desc { font-family: var(--sans); font-size: 0.84rem; font-weight: 300; color: var(--ink-mid); line-height: 1.72; margin-bottom: 1rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { font-family: var(--sans); font-size: 0.6rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.22rem 0.6rem; border: 1px solid var(--rule); color: var(--ink-light); }
 
-		<div id="colorlib-main">
-			<section id="colorlib-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-				   	<li style="background-image: url(images/bookbackground.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Hi! <br>I am Jovina </h1>
-						   					
-												
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	
-				  	</ul>
-			  	</div>
-			</section>
+    /* ── Publications ── */
+    #publications { background: var(--paper-warm); border-bottom: 1px solid var(--rule); }
+    .pub-list { border-top: 1px solid var(--rule); }
+    .pub-item { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid var(--rule); align-items: start; }
+    .pub-year { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.06em; color: var(--ink-light); padding-top: 0.4em; }
+    .pub-badge { display: inline-block; font-family: var(--sans); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.18rem 0.5rem; margin-bottom: 0.5rem; }
+    .pub-badge.published { background: #eaf4ea; color: #2a6b2a; }
+    .pub-badge.prep { background: #fef9ec; color: #8a6200; }
+    .pub-title { font-family: var(--serif); font-size: 1rem; font-weight: 500; line-height: 1.4; margin-bottom: 0.35rem; }
+    .pub-title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); transition: all 0.2s; }
+    .pub-title a:hover { color: var(--accent); border-color: var(--accent); }
+    .pub-authors { font-family: var(--sans); font-size: 0.8rem; font-weight: 300; color: var(--ink-mid); margin-bottom: 0.2rem; }
+    .pub-authors strong { font-weight: 500; color: var(--ink); }
+    .pub-journal { font-family: var(--sans); font-size: 0.76rem; color: var(--ink-light); font-style: italic; }
 
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<h2 class="colorlib-heading animate-box">About me</h2>
-										<p> Hi. I am Jovina, a final-year undergraduate majoring in Chemical Engineering at IIT Bombay. I want to become a professor owing to my undeterred interest in helping young brains unfold their true potential, and also to do what I love- research! </p>
-<p> I live in two worlds. As a part of one, I have sat in the lab through sleepless nights, breaking my head to understand, execute and create. I have had long discussions with professors and labmates, and also hours of silent reflection, months of dry spells and dawns of little epiphanies. It is a rewarding world </p>
+    /* ── CV ── */
+    #cv { border-bottom: 1px solid var(--rule); }
+    .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+    .cv-block { margin-bottom: 2.5rem; }
+    .cv-block h3 { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule); margin-bottom: 1.4rem; }
+    .cv-item { margin-bottom: 1.3rem; }
+    .cv-item-title { font-family: var(--serif); font-size: 1rem; font-weight: 500; margin-bottom: 0.15rem; }
+    .cv-item-sub { font-family: var(--sans); font-size: 0.78rem; font-weight: 300; color: var(--ink-mid); }
+    .cv-item-date { font-family: var(--sans); font-size: 0.65rem; color: var(--ink-light); letter-spacing: 0.04em; }
+    .chip-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+    .chip { font-family: var(--sans); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.06em; padding: 0.28rem 0.65rem; border: 1px solid var(--rule); color: var(--ink-mid); }
 
-<p> My other world is the one of poetry. I love to write. You can find my work here-<p><a href="http://littlethingsbyjovina.blogspot.com/">http://littlethingsbyjovina.blogspot.com/</a></p>Similar to the world of research, even this one is a sine curve. Sometimes, words flow by effortlessly, and other times, I want to wave the flag of creative depletion. </p>
+    /* ── Poetry ── */
+    #poetry { background: var(--paper-warm); border-bottom: 1px solid var(--rule); }
+    .poetry-top { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-bottom: 4rem; }
+    .poetry-intro { font-size: 1.05rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 2rem; }
+    .book-feature { background: var(--paper); border: 1px solid var(--rule); padding: 2.2rem; margin-bottom: 1.5rem; }
+    .book-title-script { font-family: var(--script); font-size: 2rem; color: var(--ink); margin-bottom: 0.2rem; }
+    .book-sub { font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 1.2rem; }
+    .book-quote { font-family: var(--serif); font-size: 0.95rem; font-style: italic; color: var(--ink-mid); line-height: 1.75; margin-bottom: 1.5rem; }
+    .book-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .ig-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--sans); font-size: 0.75rem; color: var(--ink-mid); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; transition: all 0.2s; margin-top: 1.2rem; }
+    .ig-link:hover { color: var(--accent); border-color: var(--accent); }
+    .reviews {}
+    .review-item { padding: 1.4rem 0; border-top: 1px solid var(--rule); }
+    .review-name { font-family: var(--sans); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .review-text { font-family: var(--serif); font-size: 0.92rem; font-style: italic; color: var(--ink-mid); line-height: 1.75; }
 
-<p> During such low moments, be it in research or poetry, a responsibility higher than my own needs inspires me to continue. While research assures me that I am inching towards creating a societal impact, poetry soothes me with the consolation that somebody will find solace in my words, and in turn the strength to fight through miseries. </p> 
-										
-										
-										<p>I have a deep reverence for art and whole heartedly appreciate classical dance forms. Other than this, speed-skating has been my source of thrill since childhood. </p>
-									</div>
-								</div>
-							</div>
-							
-				</div>
-			</div>
+    /* Poems with sketches */
+    .poems-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border-top: 1px solid var(--rule); padding-top: 3rem; }
+    .poem-card { display: flex; flex-direction: column; gap: 1.5rem; }
+    .poem-sketch { border: 1px solid var(--rule); background: var(--paper); }
+    .poem-sketch img { width: 100%; display: block; }
+    .poem-name { font-family: var(--script); font-size: 1.25rem; color: var(--ink); margin-bottom: 1rem; }
+    .poem-body { font-family: var(--serif); font-size: 0.98rem; line-height: 2; color: var(--ink-mid); white-space: pre-line; }
+    .poem-source { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.1em; color: var(--ink-light); margin-top: 0.8rem; }
 
-			
-					
-						
-						
-							
-			
-									</div>
-			</section>
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-			
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							
-							<h2 class="colorlib-heading animate-box">Work Experience</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-						 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Modelling of the formation of gas phase ions in electrodynamic traps<p></a>
-								Prof. Pratim Biswas| Washington University at St. Louis </p><span>Jan' 20-present</span></h2>
-					                  <p>I have secured a position in the joint MS exchange programme between IIT Bombay and Washington University at St. Louis. I started with exploring levitation traps with time varying electric fields to trap particles in order to understand the mechanism of Rayleigh breakup. I reproduced on Matlab the oscillations these droplets undergo and after this, moved on to explore the fate of these particles from the moment they are sprayed from to nozzle to the moment they hit the ground electrode plate. </p>
-					               </div>
-					            </div>
-					         </article>
-						 <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Shear and compression of complex liquid-liquid interfaces<p></a>
-								Prof. Gerald Fuller| Stanford University</p><span>June' 19-July' 19</span></h2>
-					                  <p>I have worked on the interfacial shear rheometer with an aim to figure out how interfacial rheology affects the tendency of spontaneous emulsification of water droplets in asphaltene solution. I also worked on the Langmuir trough to quantify the adsorption and desorption of proteins at the oil-water interface. </p>
-					               </div>
-					            </div>
-					         </article>
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
- 					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
- 					               <div class="timeline-label">
-					                  <h2><a href="#">Fluidisation of Drug Particles
+    /* Text-only poems */
+    .poems-text-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+    .poem-text-only { border-top: 1px solid var(--rule); padding-top: 1.8rem; }
 
-<p></a>
-								Prof. Partha Sarathi Goswami| IIT Bombay</p> <span>May' 18-May' 19</span></h2>
-					                  <p>I am working on the design of a dry powder inhaler in order to optimize drug particle fluidisation.
-								  My motive was to characterize the flow field of powder particles through image analysis and then with the help of Discrete Element Analysis, perform computational modelling to compare the experimental results with the ones obtained by simulations.</p>
-					               </div>
-					            </div>
-					         </article>
- 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Polystyrene Particle Synthesis
-<p></a>
-								Prof. Partha Sarathi Goswami| IIT Bombay</p> <span>May' 18-May' 19</span></h2>
-					                  <p>I have synthesised polystyrene particles by suspension polymerisation. I analyzed their average sizes and polydispersity. </p>
-					               </div>
-			
-					            </div>
-					         </article>
- 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Industrial Learning Program
-<p></a>
-								Prof. Nitin Padhiyar| IIT Gandhinagar</p><span>Dec' 17-Jan' 18</span></h2>
-					                  <p> I have performed simulations and graphical analysis on DWSIM for the esterification reaction which I scrutinized on a reactive distillation unit. </p>
-					               </div>
-					            </div>
-					         </article>
- 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Nonlinear  Dynamics
-<p></a>
-								Summer of Science| IIT Bombay</p> <span>May' 17-July' 17</span></h2>
-					                  <p>I have performed qualitative graphical analysis of the dynamics of non-linear systems. I have analysed the stability and learnt to quantitatively measure the rate of decay to fixed points.</p>
-					               </div>
-					            </div>
-					         </article>
-					          <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Digital Stop Watch
-<p></a>
-								Prof. Subhananda Chakrabarti| IIT Bombay</p> <span>Sept' 18-Nov' 18</span></h2>
-					                  <p> I have made a digital stop watch to count till 5:00 mins using the concepts learnt in the introductory electrical circuits and electronics course. It was made using ICs and Logic Gates. </p>
-					               </div>
-					            </div>
-					         </article>
-					              
- 					       
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--rule); padding: 2rem clamp(1.5rem, 5vw, 3.5rem); max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-family: var(--sans); font-size: 0.72rem; font-weight: 300; color: var(--ink-light); }
+    .footer-links { display: flex; gap: 1.8rem; }
+    .footer-links a { font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
 
-			
-					      
+    /* ── Fade ── */
+    .fade { opacity: 0; transform: translateY(16px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade.on { opacity: 1; transform: translateY(0); }
 
+    /* ── Mobile ── */
+    @media (max-width: 760px) {
+      .hero-grid, .poetry-top, .cv-grid, .poems-grid, .poems-text-row { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-card { display: none; }
+      .project-item, .pub-item { grid-template-columns: 1fr; gap: 0.3rem; }
+      .project-n, .pub-year { display: none; }
+      .nav-links { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--rule); flex-direction: column; padding: 1.5rem clamp(1.5rem, 5vw, 3.5rem); gap: 1.2rem; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+    }
+  </style>
+</head>
+<body>
 
-					        
-					              
+  <nav>
+    <a class="nav-brand" href="#about">Jovina Vaswani</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#phd-research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#poetry">Poetry</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-					     
+  <main style="padding-top: var(--nav-h);">
 
-					      
+    <!-- ── About ── -->
+    <section id="about">
+      <div class="section-inner">
+        <div class="hero-grid">
 
-			
-							
-		<section class="colorlib-contact" data-section="contact">
-				<div class="colorlib-narrow-content">
-		
-		
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft" >
-								<div class="colorlib-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="#">vaswanijovina@gmail.com</a></p>
-								</div>
-							</div>
+          <div class="fade">
+            <h1 class="hero-name">Jovina Vaswani</h1>
+            <p class="hero-subtitle">Poet &amp; ChemE PhD</p>
+            <div class="rule-line"></div>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft" >
-								<div class="colorlib-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>C-606, H10, IIT Bombay, Powai, Mumbai, India</p>
-								</div>
-							</div>
+            <p class="hero-bio">I am a final-year PhD student in the <strong>Department of Chemical and Petroleum Engineering</strong> at the University of Pittsburgh, where I work with <strong>Dr. Sachin Velankar</strong>. My research focuses on how particle-laden drops deform, arrest, and coalesce under flow, combining microfluidic experiments with OpenFOAM simulations and constitutive modeling.</p>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-phone"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="tel://">8454939881</a></p>
-								</div>
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
-			</section>
+            <p class="hero-bio" style="margin-top:0.7rem;">Previously, I completed my undergraduate degree from <strong>IIT Bombay</strong>.</p>
 
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
+            <p class="hero-bio" style="margin-top:0.7rem;">I am also a poet. My debut poetry collection, <a href="#poetry"><em>It's Dawn</em></a>, was released on December 13th, 2023.</p>
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
+            <div class="postdoc-banner">
+              <span class="postdoc-dot"></span>
+              Seeking postdoc positions in complex fluids / soft matter — starting late 2026 / early 2027
+            </div>
 
-	</body>
+            <div class="hero-links">
+              <a href="resume_JovinaVaswani.pdf" class="btn btn-primary" download>Download CV</a>
+              <a href="mailto:jov44@pitt.edu" class="btn btn-secondary">jov44@pitt.edu</a>
+              <a href="#poetry" class="btn btn-secondary">Poetry →</a>
+            </div>
+          </div>
+
+          <div class="hero-card fade" style="transition-delay:0.15s;">
+            <p class="hero-card-label">Current research</p>
+            <div class="capsule">
+              <span class="capsule-num">01</span>
+              <span class="capsule-text">Viscous anchoring in non-Newtonian drops — spatiotemporal viscosity gradients arrest shape recovery (OpenFOAM / Carreau-Yasuda)</span>
+            </div>
+            <div class="capsule">
+              <span class="capsule-num">02</span>
+              <span class="capsule-text">Microfluidic Stokes trap experiments — history-dependent, anisotropic arrest under extensional flow</span>
+            </div>
+            <div class="capsule">
+              <span class="capsule-num">03</span>
+              <span class="capsule-text">Flow-induced partial coalescence of particle-filled emulsion drops — published I&ECR 2025</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PhD Research ── -->
+    <section id="phd-research">
+      <div class="section-inner">
+        <p class="eyebrow">PhD Research</p>
+        <p class="research-intro fade">A central question across my PhD: how does <em>local rheology</em> govern drop-scale dynamics? Dense particle loading arrests drops at non-spherical shapes — my research asks why, and which regions arrest first.</p>
+
+        <div class="project-list">
+
+          <div class="project-item fade">
+            <span class="project-n">01</span>
+            <div>
+              <h3 class="project-title">Viscous Anchoring in Non-Newtonian Drops</h3>
+              <p class="project-desc">OpenFOAM simulations using the Carreau-Yasuda constitutive model as an effective-medium description of the particle-laden interior. Low-shear-rate regions near drop ends transition to high viscosity, forming <em>viscous anchors</em> that arrest shape recovery. Three distinct regimes emerge depending on the relaxation time λ, characterized by a capillary Weissenberg number Wi<sub>cap</sub> = λγ̇<sub>cap</sub>.</p>
+              <div class="tags"><span class="tag">OpenFOAM</span><span class="tag">RheoTool</span><span class="tag">Carreau-Yasuda</span><span class="tag">Manuscript in prep</span></div>
+            </div>
+          </div>
+
+          <div class="project-item fade">
+            <span class="project-n">02</span>
+            <div>
+              <h3 class="project-title">Relaxation Dynamics in a Microfluidic Stokes Trap</h3>
+              <p class="project-desc">Individual particle-filled drops trapped in the stagnation zone of a 4-channel extensional flow device (Schroeder group, UIUC). Highly filled drops exhibit retarded, history-dependent relaxation and arrest at non-spherical shapes. Arrest can be mitigated by perpendicular extensional flow.</p>
+              <div class="tags"><span class="tag">Microfluidics</span><span class="tag">Stokes Trap</span><span class="tag">MATLAB / Python</span><span class="tag">Manuscript in prep</span></div>
+            </div>
+          </div>
+
+          <div class="project-item fade">
+            <span class="project-n">03</span>
+            <div>
+              <h3 class="project-title">Flow-Induced Partial Coalescence</h3>
+              <p class="project-desc">Shear-induced partial coalescence in PEO drops filled to >50 vol% silica in polyisobutylene. High shear creates arrested non-spherical shapes that partially coalesce at lower shear rates; merged drops revert to sphericity through collision-induced yielding — not capillarity. Systematic study of shear rate and loading dependence.</p>
+              <div class="tags"><span class="tag">Parallel-plate Rheometry</span><span class="tag">Optical Microscopy</span><span class="tag">I&ECR 2025</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Publications ── -->
+    <section id="publications">
+      <div class="section-inner">
+        <p class="eyebrow">Publications</p>
+
+        <div class="pub-list">
+
+          <div class="pub-item fade">
+            <span class="pub-year">Prep</span>
+            <div>
+              <span class="pub-badge prep">In Preparation</span>
+              <p class="pub-title">Spatiotemporal viscosity gradients shape breakup and relaxation in non-Newtonian drops</p>
+              <p class="pub-authors"><strong>Jovina Vaswani</strong>, Sachin S. Velankar, Arvind Gopinath, A. Venkattraman</p>
+              <p class="pub-journal">Manuscript in preparation</p>
+            </div>
+          </div>
+
+          <div class="pub-item fade">
+            <span class="pub-year">Prep</span>
+            <div>
+              <span class="pub-badge prep">In Preparation</span>
+              <p class="pub-title">Relaxation of particle-filled drop in a 4-channel microfluidic hydrodynamic trap</p>
+              <p class="pub-authors"><strong>Jovina Vaswani</strong>, Hùng Nguyễn, Yamajala Srikar, Sachin S. Velankar</p>
+              <p class="pub-journal">Manuscript in preparation</p>
+            </div>
+          </div>
+
+          <div class="pub-item fade">
+            <span class="pub-year">2025</span>
+            <div>
+              <span class="pub-badge published">Published</span>
+              <p class="pub-title"><a href="https://pubs.acs.org/doi/10.1021/acs.iecr.5b02185" target="_blank" rel="noopener">Particle-filled emulsion drops show flow-induced partial coalescence, but only transiently</a></p>
+              <p class="pub-authors"><strong>Jovina Vaswani</strong>, Sachin S. Velankar</p>
+              <p class="pub-journal">Industrial &amp; Engineering Chemistry Research, Vol. 64, 22185–22195</p>
+            </div>
+          </div>
+
+          <div class="pub-item fade">
+            <span class="pub-year">2023</span>
+            <div>
+              <span class="pub-badge published">Published</span>
+              <p class="pub-title"><a href="https://doi.org/10.1016/j.jciso.2023.100079" target="_blank" rel="noopener">Low viscosity liquid bridges: Stretching of liquid bridges immersed in a higher viscosity liquid</a></p>
+              <p class="pub-authors">Ramon Lopez, <strong>Jovina Vaswani</strong>, Dylan T. Butler, Joseph McCarthy, Sachin S. Velankar</p>
+              <p class="pub-journal">JCIS Open, Vol. 9, 100079</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CV ── -->
+    <section id="cv">
+      <div class="section-inner">
+        <p class="eyebrow">Curriculum Vitae</p>
+
+        <div class="cv-grid">
+          <div>
+
+            <div class="cv-block fade">
+              <h3>Education</h3>
+              <div class="cv-item">
+                <p class="cv-item-title">PhD, Chemical Engineering</p>
+                <p class="cv-item-sub">University of Pittsburgh · Advisor: Prof. Sachin Velankar</p>
+                <p class="cv-item-date">Aug 2021 — Expected Oct 2026</p>
+              </div>
+              <div class="cv-item">
+                <p class="cv-item-title">BTech + MTech, Chemical Engineering</p>
+                <p class="cv-item-sub">IIT Bombay · Advisor: Prof. Rochish Thaokar</p>
+                <p class="cv-item-date">Jul 2016 — Jun 2021</p>
+              </div>
+            </div>
+
+            <div class="cv-block fade">
+              <h3>Research Experience</h3>
+              <div class="cv-item">
+                <p class="cv-item-title">Research Intern — Interfacial Rheology</p>
+                <p class="cv-item-sub">Stanford University · Prof. Gerald Fuller</p>
+                <p class="cv-item-date">Jun – Jul 2019</p>
+              </div>
+            </div>
+
+            <div class="cv-block fade">
+              <h3>Teaching</h3>
+              <div class="cv-item">
+                <p class="cv-item-title">Transport Phenomena (ChE 300)</p>
+                <p class="cv-item-sub">Teaching Assistant · University of Pittsburgh</p>
+                <p class="cv-item-date">Aug – Dec 2023</p>
+              </div>
+              <div class="cv-item">
+                <p class="cv-item-title">Fundamentals of Thermodynamics (ChE 2101)</p>
+                <p class="cv-item-sub">Teaching Assistant · University of Pittsburgh</p>
+                <p class="cv-item-date">Jan – May 2023</p>
+              </div>
+            </div>
+
+            <div class="cv-block fade">
+              <h3>Service</h3>
+              <div class="cv-item">
+                <p class="cv-item-title">Student Member, Community Development Committee</p>
+                <p class="cv-item-sub">Society of Rheology</p>
+                <p class="cv-item-date">Jan 2026 — Jan 2028</p>
+              </div>
+              <div class="cv-item">
+                <p class="cv-item-title">Student Judge, Research Day</p>
+                <p class="cv-item-sub">Dept. Chemical Engineering, University of Pittsburgh</p>
+                <p class="cv-item-date">2024, 2025</p>
+              </div>
+              <div class="cv-item">
+                <p class="cv-item-title">Science Outreach</p>
+                <p class="cv-item-sub">Roy Hunt Elementary School — hands-on event for 6th graders</p>
+                <p class="cv-item-date">Mar 2025</p>
+              </div>
+            </div>
+
+          </div>
+          <div>
+
+            <div class="cv-block fade">
+              <h3>Selected Presentations</h3>
+              <div class="cv-item">
+                <p class="cv-item-title">Society of Rheology — Poster</p>
+                <p class="cv-item-sub">Flow-induced partial coalescence in particle-filled drops</p>
+                <p class="cv-item-date">2024</p>
+              </div>
+              <div class="cv-item">
+                <p class="cv-item-title">APS March Meeting — Oral Presentation</p>
+                <p class="cv-item-sub">Flow-induced partial coalescence in particle-filled drops</p>
+                <p class="cv-item-date">2024</p>
+              </div>
+            </div>
+
+            <div class="cv-block fade">
+              <h3>Simulation</h3>
+              <div class="chip-list">
+                <span class="chip">OpenFOAM</span><span class="chip">RheoTool</span>
+                <span class="chip">rheoInterFoam</span><span class="chip">ParaView</span>
+                <span class="chip">fluidfoam</span>
+              </div>
+            </div>
+
+            <div class="cv-block fade">
+              <h3>Experiments</h3>
+              <div class="chip-list">
+                <span class="chip">Parallel-plate Rheometry</span>
+                <span class="chip">4-channel Stokes Trap</span>
+                <span class="chip">Optical Microscopy</span>
+                <span class="chip">Anton Paar</span>
+                <span class="chip">LabVIEW</span>
+              </div>
+            </div>
+
+            <div class="cv-block fade">
+              <h3>Programming</h3>
+              <div class="chip-list">
+                <span class="chip">Python</span><span class="chip">MATLAB</span>
+                <span class="chip">LaTeX</span><span class="chip">ImageJ</span>
+              </div>
+            </div>
+
+            <div class="fade" style="margin-top: 1.5rem;">
+              <a href="resume_JovinaVaswani.pdf" class="btn btn-primary" download>Download Full CV (PDF)</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Poetry ── -->
+    <section id="poetry">
+      <div class="section-inner">
+        <p class="eyebrow">Poetry</p>
+
+        <div class="poetry-top">
+          <div class="fade">
+            <p class="poetry-intro">My poetry sits alongside my science — both are attempts to understand something difficult by looking at it carefully, and to write what I found so that others do not have to look quite as hard.</p>
+
+            <div class="book-feature">
+              <p class="book-title-script">It's Dawn</p>
+              <p class="book-sub">Debut Collection · Published December 2023 · Illustrated by Nandan Prince</p>
+              <p class="book-quote">"Do not stop now, you little warrior. It's almost dawn."</p>
+              <div class="book-links">
+                <a href="https://www.amazon.com/Its-Dawn-Jovina-Vaswani/dp/B0CQ49HSR1/" class="btn btn-primary" target="_blank" rel="noopener">Amazon (USA)</a>
+                <a href="https://www.amazon.in/Its-Dawn-Jovina-Vaswani/dp/B0CQCJXNVH/" class="btn btn-secondary" target="_blank" rel="noopener">Amazon (India)</a>
+              </div>
+            </div>
+
+            <a href="https://instagram.com/jovina_poetry" class="ig-link" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              @jovina_poetry on Instagram
+            </a>
+          </div>
+
+          <div class="reviews fade" style="transition-delay:0.12s;">
+            <div class="review-item" style="border-top:none; padding-top:0;">
+              <p class="review-name">Ryanna Hammond, poet</p>
+              <p class="review-text">"It's Dawn is a beautiful collection of poetry about love, hope, loss, change, growth, and spirituality. Vaswani shares raw truths from her heart that are both relatable and profound. I highlighted many poems and a few were so stunning they gave me goosebumps. The theme of dawn — new beginnings — was a beautiful thread in this book."</p>
+            </div>
+            <div class="review-item">
+              <p class="review-name">Sabina Laura, poet</p>
+              <p class="review-text">"It's Dawn is a beautiful and bright collection of poems. I love the dawn and light related imagery used throughout. Through strong imagery and emotion, these words offer solace and hope. There are themes of grief, loss, change, growth, hope, healing, love, and self-discovery within these pages. I also love the pretty illustrations that accompany the words!"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Illustrated poems from the book -->
+        <div class="poems-grid">
+
+          <div class="poem-card fade">
+            <div class="poem-sketch">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/64910282202e3a012d8f2b5d/70f49508-6dfb-43d3-b5e5-2e325f0a1498/Somewhere+in+my+bones.PNG"
+                alt="Illustrated poem — Somewhere in my bones"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="poem-name">Somewhere in My Bones</p>
+              <p class="poem-body">Somewhere in my bones,
+I know that the waves knocking
+the air out of me will die,
+and I will live.</p>
+              <p class="poem-source">— It's Dawn</p>
+            </div>
+          </div>
+
+          <div class="poem-card fade" style="transition-delay:0.1s;">
+            <div class="poem-sketch">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/64910282202e3a012d8f2b5d/67ca02e6-e052-4158-bc01-510d3803ec5e/Poetry+and+I+are+forever.PNG"
+                alt="Illustrated poem — Poetry and I are forever"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="poem-name">Poetry and I Are Forever</p>
+              <p class="poem-body">Every once in a while,
+my words launch into an orbit around you.
+I do not know how to shake from my bones
+this innate desire to write about you.
+The poems I write do not move you.
+Sometimes, you do not even read them,
+and so I wonder—
+do I really write for you?
+Or is it all for myself?</p>
+              <p class="poem-source">— It's Dawn</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Additional text poems -->
+        <div class="poems-text-row">
+          <div class="poem-text-only fade">
+            <p class="poem-name">It Will Get Better</p>
+            <p class="poem-body">Here's to hearts—
+the ones which are lost,
+and falling apart.
+
+Here's to souls—
+the ones that are hurt
+while fighting the cold.
+
+The storms shall end.
+The dawn shall break.
+Thorns pricked,
+but roses await.</p>
+            <p class="poem-source">— It's Dawn</p>
+          </div>
+
+          <div class="poem-text-only fade" style="transition-delay:0.1s;">
+            <p class="poem-name">You'll Find Yourself</p>
+            <p class="poem-body">Oh, but how we lose ourselves
+for the things we love!
+And then, find ourselves
+while healing from their loss.</p>
+            <p class="poem-source">— It's Dawn</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="footer-copy">© 2026 Jovina Vaswani · Pittsburgh, PA</p>
+    <div class="footer-links">
+      <a href="mailto:jov44@pitt.edu">Email</a>
+      <a href="https://jovinavaswani.com" target="_blank" rel="noopener">Poetry Site</a>
+      <a href="https://instagram.com/jovina_poetry" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    // Active nav on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    sections.forEach(s => {
+      new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            navLinks.forEach(a => a.classList.remove('active'));
+            const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+            if (a) a.classList.add('active');
+          }
+        });
+      }, { threshold: 0.25 }).observe(s);
+    });
+
+    // Mobile menu
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+    // Fade in on scroll
+    const fo = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('on'); fo.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade').forEach(el => fo.observe(el));
+  </script>
+
+</body>
 </html>
-
