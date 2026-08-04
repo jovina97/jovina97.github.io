@@ -92,6 +92,8 @@
     .project-desc { font-family: var(--sans); font-size: 0.92rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; margin-bottom: 1rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .tag { font-family: var(--sans); font-size: 0.6rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.22rem 0.6rem; border: 1px solid var(--rule); color: var(--ink-light); }
+    .tag.tag-link { color: var(--accent); border-color: var(--accent-soft); text-decoration: none; }
+    .tag.tag-link:hover { background: var(--paper-warm); }
 
     /* ── Publications ── */
     #publications { background: var(--paper-warm); border-bottom: 1px solid var(--rule); }
@@ -101,6 +103,7 @@
     .pub-badge { display: inline-block; font-family: var(--sans); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.18rem 0.5rem; margin-bottom: 0.5rem; }
     .pub-badge.published { background: #eaf4ea; color: #2a6b2a; }
     .pub-badge.prep { background: #fef9ec; color: #8a6200; }
+    .pub-badge.preprint { background: #eaf1fa; color: #1a5490; }
     .pub-title { font-family: var(--serif); font-size: 1rem; font-weight: 500; line-height: 1.4; margin-bottom: 0.35rem; }
     .pub-title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); transition: all 0.2s; }
     .pub-title a:hover { color: var(--accent); border-color: var(--accent); }
@@ -214,7 +217,7 @@
 
             <div class="postdoc-banner">
               <span class="postdoc-dot"></span>
-              Seeking postdoc positions in complex fluids / soft matter — starting late 2026 / early 2027
+              Seeking postdoc &amp; industry positions in complex fluids / soft matter — starting late 2026 / early 2027
             </div>
 
             <div class="hero-links">
@@ -241,7 +244,10 @@
             <div>
               <h3 class="project-title">Viscous Anchoring in Non-Newtonian Drops</h3>
               <p class="project-desc">OpenFOAM simulations using the Carreau-Yasuda constitutive model as an effective-medium description of the particle-laden interior. Low-shear-rate regions near drop ends transition to high viscosity, forming <em>viscous anchors</em> that arrest shape recovery. Three distinct regimes emerge depending on the relaxation time λ, characterized by a capillary Weissenberg number Wi<sub>cap</sub> = λγ̇<sub>cap</sub>.</p>
-              <div class="tags"><span class="tag">OpenFOAM</span><span class="tag">RheoTool</span><span class="tag">Carreau-Yasuda</span><span class="tag">Manuscript in prep</span></div>
+              <div class="tags">
+                <span class="tag">OpenFOAM</span><span class="tag">RheoTool</span><span class="tag">Carreau-Yasuda</span>
+                <a class="tag tag-link" href="https://chemrxiv.org/doi/abs/10.26434/chemrxiv.15006931/v1" target="_blank" rel="noopener">Preprint on ChemRxiv →</a>
+              </div>
             </div>
           </div>
 
@@ -275,12 +281,12 @@
         <div class="pub-list">
 
           <div class="pub-item fade">
-            <span class="pub-year">Prep</span>
+            <span class="pub-year">2026</span>
             <div>
-              <span class="pub-badge prep">In Preparation</span>
-              <p class="pub-title">Spatiotemporal viscosity gradients shape breakup and relaxation in non-Newtonian drops</p>
+              <span class="pub-badge preprint">Preprint</span>
+              <p class="pub-title"><a href="https://chemrxiv.org/doi/abs/10.26434/chemrxiv.15006931/v1" target="_blank" rel="noopener">Spatiotemporal viscosity gradients shape breakup and relaxation in non-Newtonian drops</a></p>
               <p class="pub-authors"><strong>Jovina Vaswani</strong>, Sachin S. Velankar, Arvind Gopinath, A. Venkattraman</p>
-              <p class="pub-journal">Manuscript in preparation</p>
+              <p class="pub-journal">ChemRxiv preprint</p>
             </div>
           </div>
 
